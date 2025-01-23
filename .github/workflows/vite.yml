@@ -64,6 +64,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Vite
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        env:
+          BASE_URL: /vite-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
